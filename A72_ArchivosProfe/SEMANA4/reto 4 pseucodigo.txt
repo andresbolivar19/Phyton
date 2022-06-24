@@ -1,0 +1,35 @@
+
+
+
+#reto 4 
+#pseudocodigo solución reto 4
+
+#1era funcion del reto
+def calcularCosto(alto,ancho,profundo):
+    volumen  = alto*ancho*profundo
+    costo = volumen*5
+	si alto es mayor a 30:
+		costo=costo+2000
+	#fuera del del 1er if y dentro de la funcion
+	si costo es mayor a 10000:
+		costo=(costo*0.19)+costo	
+	#fuera del 2do if y dentro de la funcion
+	return costo
+
+#2da funcion del reto 4
+def costoTotal(numeroPaq,descuento):
+	total = 0 #acumular el total con descuento	
+	para iterador in range(numeroPaq):
+		alto = float(input())
+		ancho =float(input())
+		profundo =float(input())
+		
+		total += calcularCosto(alto, ancho, profundo) #acumular += ---> total = total+calcularCosto
+		#descuento a la variable total
+	#fuera del for y dentro de la funcion
+	return total*(1-descuento/100)
+
+#comprobar en visual NO USAR EN EL CODE RUNNER
+print(calcularCosto(35,10,5))
+print(costoTotal( 2 , 50))
+
